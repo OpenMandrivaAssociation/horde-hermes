@@ -1,7 +1,7 @@
 %define	module	hermes
 %define	name	horde-%{module}
 %define version 1.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -41,7 +41,7 @@ cat > %{buildroot}%{_sysconfdir}/horde/registry.d/%{module}.php <<'EOF'
 //
  
 $this->applications['hermes'] = array(
-    'fileroot' => \$this->applications['horde']['fileroot'] . '/hermes',
+    'fileroot' => $this->applications['horde']['fileroot'] . '/hermes',
     'webroot' => $this->applications['horde']['webroot'] . '/hermes',
     'name' => _("Time Tracking"),
     'status' => 'active',
