@@ -1,7 +1,7 @@
 %define	module	hermes
 %define	name	horde-%{module}
 %define version 1.0
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -122,10 +122,14 @@ if [ $1 = 1 ]; then
 	%create_ghostfile %{_sysconfdir}/horde/%{module}/conf.php apache apache 644
 	%create_ghostfile %{_sysconfdir}/horde/%{module}/conf.php.bak apache apache 644
 fi
+%if %mdkversion < 201010
 %_post_webapp
+%endif
 
 %postun
+%if %mdkversion < 201010
 %_postun_webapp
+%endif
 
 %files
 %defattr(-,root,root)
