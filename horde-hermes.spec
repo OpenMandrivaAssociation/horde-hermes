@@ -1,7 +1,7 @@
 %define	module	hermes
 %define	name	horde-%{module}
-%define version 1.0
-%define release %mkrel 7
+%define version 1.0.1
+%define release %mkrel 1
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -14,7 +14,7 @@ Group:		System/Servers
 URL:		http://www.horde.org/%{module}
 Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
 Requires(post):	rpm-helper
-Requires:	horde >= 3.3.5
+Requires:	horde >= 3.3.8
 BuildArch:	noarch
 
 %description
