@@ -1,19 +1,13 @@
 %define	module	hermes
-%define	name	horde-%{module}
-%define version 1.0.1
-%define release: 3
 
-%define _requires_exceptions pear(Horde.*)
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		horde-%{module}
+Version:	1.0.1
+Release:	3
 Summary:	The Horde file manager
 License:	GPL
 Group:		System/Servers
 URL:		http://www.horde.org/%{module}
 Source0:	ftp://ftp.horde.org/pub/%{module}/%{module}-h3-%{version}.tar.gz
-Requires(post):	rpm-helper
 Requires:	horde >= 3.3.8
 BuildArch:	noarch
 
