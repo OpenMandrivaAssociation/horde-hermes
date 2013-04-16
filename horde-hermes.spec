@@ -1,7 +1,7 @@
 %define	module	hermes
 %define	name	horde-%{module}
 %define version 1.0.1
-%define release %mkrel 1
+%define release: 2
 
 %define _requires_exceptions pear(Horde.*)
 
@@ -125,10 +125,6 @@ fi
 %_post_webapp
 %endif
 
-%postun
-%if %mdkversion < 201010
-%_postun_webapp
-%endif
 
 %files
 %defattr(-,root,root)
