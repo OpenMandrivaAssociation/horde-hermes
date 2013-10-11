@@ -2,7 +2,7 @@
 
 Name:		horde-%{module}
 Version:	1.0.1
-Release:	3
+Release:	4
 Summary:	The Horde file manager
 License:	GPL
 Group:		System/Servers
@@ -23,8 +23,6 @@ invoice interface
 %build
 
 %install
-rm -rf %{buildroot}
-
 # apache configuration
 install -d -m 755 %{buildroot}%{_webappconfdir}
 cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
@@ -103,7 +101,6 @@ for file in %{buildroot}%{_sysconfdir}/horde/%{module}/*.dist; do
 done
 
 %clean
-rm -rf %{buildroot}
 
 %post
 if [ $1 = 1 ]; then
@@ -117,7 +114,6 @@ fi
 
 
 %files
-%defattr(-,root,root)
 %doc LICENSE README docs
 %config(noreplace) %{_webappconfdir}/%{name}.conf
 %config(noreplace) %{_sysconfdir}/horde/registry.d/%{module}.php
